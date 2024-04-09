@@ -8,7 +8,5 @@ public class ScrabbleApplicationConsole {
 		System.out.println("-- Développé par nous --");
 		System.out.println("testtt");
 		System.out.println("-------------------------------------------------------");
-
 	}
-
 }
