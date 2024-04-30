@@ -6,7 +6,9 @@ import java.util.List;
 
 public class Sac {
 	
-	public static void main(String[] args) {
+	private List<Jeton> sacRempli;
+
+	public List<Jeton> sac() {
 		List<Jeton>sacRempli =new ArrayList<Jeton>();
 		for (int i=0; i<15;i++) {
 			sacRempli.add(new Jeton(Lettre.E,Point.UN));
@@ -46,7 +48,8 @@ public class Sac {
 		
 		
 		//collections.shuffle -> mélange notre sac
-        Collections.shuffle(sacRempli); 
+        Collections.shuffle(sacRempli);
+		return sacRempli; 
 		
 	}
 

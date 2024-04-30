@@ -1,4 +1,4 @@
-package scrabble.application;
+package scrabble.matériel;
 
 public class Jeton {
 	private Lettre lettre;
