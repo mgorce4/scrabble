@@ -7,9 +7,10 @@ import scrabble.matériel.Jeton;
 
 public class ScrabbleApplicationConsole {
 	
-	Chevalet chevalet = new Chevalet();
 	
-	public static final String LIGNE_HORIZONTALE = "-------------------------------------------------------";
+	private static Chevalet chevalet = new Chevalet();
+	
+	private static final String LIGNE_HORIZONTALE = "-------------------------------------------------------";
 
 	public static void message(String texte) {
 		System.out.println(texte);
@@ -22,11 +23,11 @@ public class ScrabbleApplicationConsole {
 		message("--testtt--");
 		message(LIGNE_HORIZONTALE);
 		
-		List<Jeton> chevalet = chevalet.remplirChevalet();
+		List<Jeton> listejetons = chevalet.retourliste();
 
 
         message("Voici le chevalet rempli :");
-        for (Jeton jeton : chevalet) {
+        for (Jeton jeton : listejetons) {
             message(jeton.toString());
         }
 

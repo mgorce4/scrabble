@@ -9,7 +9,7 @@ public class Sac {
 	private List<Jeton> sacRempli;
 
 	public List<Jeton> sac() {
-		List<Jeton>sacRempli =new ArrayList<Jeton>();
+		sacRempli =new ArrayList<Jeton>();
 		for (int i=0; i<15;i++) {
 			sacRempli.add(new Jeton(Lettre.E,Point.UN));
 		}
