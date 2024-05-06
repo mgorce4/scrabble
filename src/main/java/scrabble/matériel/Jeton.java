@@ -20,4 +20,5 @@ public class Jeton {
 		return "|" + lettre.code()+"|" +"  pt:"+ point.code();
 	}
 
+
 }
