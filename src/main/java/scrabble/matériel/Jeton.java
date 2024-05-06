@@ -17,7 +17,7 @@ public class Jeton {
 		return point;
 	}
 	public String toString() {
-		return lettre.code() + point.code();
+		return "|" + lettre.code()+"|" +"  pt:"+ point.code();
 	}
 
 }
