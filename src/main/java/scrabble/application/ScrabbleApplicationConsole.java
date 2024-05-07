@@ -4,6 +4,7 @@ import java.util.List;
 
 import scrabble.matériel.Chevalet;
 import scrabble.matériel.Jeton;
+import scrabble.matériel.Sac;
 
 public class ScrabbleApplicationConsole {
 	
