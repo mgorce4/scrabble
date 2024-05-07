@@ -44,15 +44,18 @@ public class Sac {
 			sacRempli.add(new Jeton(Lettre.H,Point.TROIS));
 			sacRempli.add(new Jeton(Lettre.V,Point.TROIS));
 		}
-		sacRempli.add(new Jeton(Lettre.B,Point.TROIS));
-		
-		
+		sacRempli.add(new Jeton(Lettre.J,Point.HUIT));
+		sacRempli.add(new Jeton(Lettre.Q,Point.HUIT));
+		sacRempli.add(new Jeton(Lettre.K,Point.DIX));
+		sacRempli.add(new Jeton(Lettre.W,Point.DIX));
+		sacRempli.add(new Jeton(Lettre.X,Point.DIX));
+		sacRempli.add(new Jeton(Lettre.Y,Point.DIX));
+		sacRempli.add(new Jeton(Lettre.Z,Point.DIX));
+				
 		//collections.shuffle -> mélange notre sac
         Collections.shuffle(sacRempli);
-		return sacRempli; 
-		
+		return sacRempli;
 	}
-
 
 }
 
