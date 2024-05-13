@@ -12,7 +12,7 @@ public class Chevalet {
     public Chevalet() {
 
         for (int i = 0; i < 7; i++) {
-        	chevaletliste=Arbitre.Piocher();
+        	chevaletliste.add(Arbitre.Piocher());
         }
         System.out.println(chevaletliste.size());
     }

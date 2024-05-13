@@ -7,20 +7,20 @@ import scrabble.application.ScrabbleApplicationConsole;
 
 public class Arbitre {
 
-	private List<Jeton> piocheArbitre;
+	private static Jeton piocheArbitre;
 	private static Sac sac = new Sac();
 		
-	public Sac PrendreSac() {
+	public static Sac PrendreSac() {
 		return sac;
 	}
 	
-	public static List<Jeton> Piocher() {
+	public static Jeton Piocher() {
 		
 		//premier code pour remplir le chevalet
-		piocheArbitre = new ArrayList<Jeton>();
     	Sac remplirChevalet = PrendreSac();
     
-        piocheArbitre.add(Sac.Remove(1));
+        piocheArbitre = remplirChevalet.sac().get(0);
+        remplirChevalet.sac().remove(0);
         
         return piocheArbitre;
     }
