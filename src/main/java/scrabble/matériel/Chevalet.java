@@ -10,17 +10,11 @@ public class Chevalet {
     private String joueur;
     
     public Chevalet() {
-    	
-    	chevaletliste=new ArrayList<Jeton>();
-    	Sac sac = new Sac(); // créer un sac par joueur 
-    	List<Jeton> sacRempli = sac.sac();
-    	
-    	System.out.println(sacRempli.size());
 
         for (int i = 0; i < 7; i++) {
-        	chevaletliste.add(sacRempli.remove(0));
+        	chevaletliste=Arbitre.Piocher();
         }
-        System.out.println(sacRempli.size());
+        System.out.println(chevaletliste.size());
     }
 
    public List<Jeton> retourliste() {
