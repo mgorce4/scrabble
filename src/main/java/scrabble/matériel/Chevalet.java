@@ -23,7 +23,7 @@ public class Chevalet {
    public List<Jeton> changement() {
 	   chevaletJoueur = retourliste();
 	   int indexJetonEchange = 2; //Index du jeton à échanger sur le chevalet
-	   Arbitre.échanger(chevaletJoueur, indexJetonEchange);
+	   Arbitre.échanger(chevaletJoueur);
 	   
 	   return chevaletJoueur;
    }
