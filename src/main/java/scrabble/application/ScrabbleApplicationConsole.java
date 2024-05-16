@@ -1,16 +1,13 @@
 package scrabble.application;
 
 import java.util.List;
-
 import scrabble.matériel.Chevalet;
 import scrabble.matériel.Jeton;
-import scrabble.matériel.Sac;
 
 public class ScrabbleApplicationConsole {
 	
-	
 	private static Chevalet chevalet = new Chevalet();
-	
+	//Chevalet chevaletJoueur = new Chevalet();
 	private static final String LIGNE_HORIZONTALE = "-------------------------------------------------------";
 
 	public static void message(String texte) {
@@ -26,11 +23,18 @@ public class ScrabbleApplicationConsole {
 		
 		List<Jeton> listejetons = chevalet.retourliste();
 
-
         message("Voici le chevalet rempli :");
         for (Jeton jeton : listejetons) {
-            message(jeton.toString());
+            message(jeton.toString());    
         }
+        
+        List<Jeton> listejetons1 = chevalet.changement();
 
-		}
+        message("Voici le chevalet rempli :");
+        for (Jeton jeton : listejetons1) {
+            message(jeton.toString());    
+        }
+        
+	}
+	
 }
