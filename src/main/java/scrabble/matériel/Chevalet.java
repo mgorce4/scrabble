@@ -1,5 +1,6 @@
 package scrabble.matériel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Chevalet {
@@ -8,6 +9,7 @@ public class Chevalet {
     private String joueur;
     
     public Chevalet() {
+    	chevaletliste = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
         	chevaletliste.add(Arbitre.Piocher());
         }
