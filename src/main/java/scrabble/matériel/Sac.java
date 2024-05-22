@@ -3,6 +3,7 @@ package scrabble.matériel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class Sac {
 	
@@ -51,14 +52,25 @@ public class Sac {
 		sacRempli.add(new Jeton(Lettre.X,Point.DIX));
 		sacRempli.add(new Jeton(Lettre.Y,Point.DIX));
 		sacRempli.add(new Jeton(Lettre.Z,Point.DIX));
-				
-		//collections.shuffle -> mélange notre sac
-        Collections.shuffle(sacRempli);
+		
 		return sacRempli;
 	}
-	
-	
 
+	public void mélanger() {
+		//collections.shuffle -> mélange notre sac
+        Collections.shuffle(sacRempli);
+	}
+	
+	public Jeton donner() {
+		
+        Jeton result = sacRempli.get(0);
+        sacRempli.remove(result);
+        return result;
+    }
+	
+	public void recevoir(Jeton jeton) {
+		sacRempli.add(jeton);
+	}
 }
 
 
