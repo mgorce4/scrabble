@@ -3,6 +3,7 @@ package scrabble.application;
 import java.util.List;
 import scrabble.matériel.Chevalet;
 import scrabble.matériel.Jeton;
+import scrabble.matériel.Plateau;
 
 public class ScrabbleApplicationConsole {
 	
@@ -17,7 +18,7 @@ public class ScrabbleApplicationConsole {
 	public static void main(String[] args) {
 		message(LIGNE_HORIZONTALE);
 		message("-- Bienvenue dans notre magnifique jeu de scrabble ! --");
-		message("-- Développé par nous --");
+		message("---------- Développé par nous ----------");
 		message("--testtt--");
 		message(LIGNE_HORIZONTALE);
 		
@@ -34,6 +35,8 @@ public class ScrabbleApplicationConsole {
         for (Jeton jeton : listejetons1) {
             message(jeton.toString());    
         }
+        
+
         
         
 	}
