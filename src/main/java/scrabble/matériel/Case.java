@@ -4,10 +4,10 @@ public enum Case {
 	
 	SIMPLE(1,1),
 	DEBUT(1,2),
-	LettreDouble(2,1),
-	LettreTriple(3,1),
-	MotDouble(2,1),
-	MotTriple(3,1);
+	LETTREDOUBLE(2,1),
+	LETTRETRIPLE(3,1),
+	MOTDOUBLE(2,1),
+	MOTTRIPLE(3,1);
 	
 	private final int multiplierLettre;
 	private final int multiplierMot;
@@ -16,7 +16,7 @@ public enum Case {
         this.multiplierLettre = multiplierLettre;
         this.multiplierMot = multiplierMot;
     }
-
+	
     public int letterMultiplier() {
         return this.multiplierLettre;
     }
