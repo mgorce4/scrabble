@@ -3,8 +3,8 @@ package scrabble.matériel;
 public class Plateau {
 	
 
-	private int nbLig;
-	private int nbCol;
+	private static int nbLig;
+	private static int nbCol;
 	private char [][] plateau;
 	
 

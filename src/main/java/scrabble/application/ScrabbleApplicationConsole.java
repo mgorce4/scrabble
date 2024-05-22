@@ -6,7 +6,7 @@ import scrabble.matériel.Jeton;
 
 public class ScrabbleApplicationConsole {
 	
-	private static Chevalet chevalet = new Chevalet();
+	public static Chevalet chevalet = new Chevalet();
 	//Chevalet chevaletJoueur = new Chevalet();
 	private static final String LIGNE_HORIZONTALE = "-------------------------------------------------------";
 
@@ -34,6 +34,7 @@ public class ScrabbleApplicationConsole {
         for (Jeton jeton : listejetons1) {
             message(jeton.toString());    
         }
+        
         
 	}
 	
