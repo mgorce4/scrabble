@@ -1,8 +1,10 @@
-package scrabble.matériel;
+package scrabble.arbitreDuJeu;
 
 import java.util.List;
 import java.util.Scanner;
-import scrabble.matériel.*;
+
+import scrabble.matériel.Jeton;
+import scrabble.matériel.Sac;
 
 
 public class Arbitre {
