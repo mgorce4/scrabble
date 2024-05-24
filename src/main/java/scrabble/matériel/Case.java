@@ -16,12 +16,17 @@ public enum Case {
         this.multiplierLettre = multiplierLettre;
         this.multiplierMot = multiplierMot;
     }
+
 	
     public int letterMultiplier() {
         return this.multiplierLettre;
     }
 
-    public int wordMultiplier() {
+    public int multiplierLettre() {
+        return this.multiplierLettre;
+    }
+
+    public int multiplierMot() {
         return this.multiplierMot;
     }
 
