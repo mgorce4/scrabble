@@ -1,5 +1,6 @@
 package scrabble.arbitreDuJeu;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,18 +17,30 @@ public class Arbitre {
 		return sacPourArbitre;
 	}
 	
+	public List<Jeton> recupListe() {
+		//permet de recuperer la list<Jeton> de l'attribut sacPourArbitre
+        return new ArrayList<>(sacPourArbitre.getSacRempli());
+    }
+	
 	public Jeton Piocher() {
-		Jeton jetonRecup =sacPourArbitre.donner();
+        sacPourArbitre.sac();
+        sacPourArbitre.mélanger();
+		List<Jeton> ListeEstRecup=recupListe();
+		Jeton jetonRecup =sacPourArbitre.donner(ListeEstRecup);
         return jetonRecup;
     }
 	
 	public void échanger(List<Jeton> chevalet) {
+		
 		System.out.println("choisissez le jeton à échanger");
 		Scanner scanner = new Scanner(System.in);
 		int jetonchoisi = scanner.nextInt();
 		
-        // On récupère le jeton à échanger du chevalet
+
         Jeton jetonEchange = chevalet.get(jetonchoisi);
+		//Sac.recevoir(jetonEchange);
+		
+        // On récupère le jeton à échanger du chevalet
         
         // On récupère le premier jeton du sac
         Jeton jetonSac = Piocher();

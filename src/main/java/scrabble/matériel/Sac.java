@@ -3,7 +3,6 @@ package scrabble.matériel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 public class Sac {
 	
@@ -12,7 +11,7 @@ public class Sac {
 	public List<Jeton> sac() {
 		sacRempli =new ArrayList<Jeton>();
 		for (int i=0; i<15;i++) {
-			sacRempli.add(new Jeton(Lettre.E,Point.UN));
+		sacRempli.add(new Jeton(Lettre.E,Point.UN));
 		}
 		for (int i=0;i<9;i++) {
 			sacRempli.add(new Jeton(Lettre.A,Point.UN));
@@ -55,22 +54,35 @@ public class Sac {
 		
 		return sacRempli;
 	}
+	
+	public List<Jeton> getSacRempli() {
+		return sacRempli;
+	}
+
+	public void setSacRempli(List<Jeton> sacRempli) {
+		this.sacRempli = sacRempli;
+	}
 
 	public void mélanger() {
 		//collections.shuffle -> mélange notre sac
-        Collections.shuffle(sacRempli);
+        Collections.shuffle(getSacRempli());
 	}
 	
-	public Jeton donner() {
-		
-        Jeton result = sacRempli.get(0);
-        sacRempli.remove(result);
-        return result;
-    }
+	public Jeton donner(List<Jeton> sac) {
+	    if (!sac.isEmpty()) {
+	        Jeton result = sac.get(0);
+	        sac.remove(result);
+	        return result;
+	    } else {
+	    	System.out.println("Le sac est vide");
+	        return null;
+	    }
+	}
 	
 	public void recevoir(Jeton jeton) {
-		sacRempli.add(jeton);
+		getSacRempli().add(jeton);
 	}
+
 }
 
 

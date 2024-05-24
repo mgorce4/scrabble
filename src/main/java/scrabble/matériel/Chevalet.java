@@ -2,17 +2,19 @@ package scrabble.matériel;
 
 import java.util.ArrayList;
 import java.util.List;
+import scrabble.arbitreDuJeu.Arbitre;
 
 public class Chevalet {
 	    
     private List<Jeton> chevaletliste;
     private List<Jeton> chevaletJoueur;
     private String joueur;
+    Arbitre arbitre= new Arbitre();
     
     public Chevalet() {
     	chevaletliste = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
-        	chevaletliste.add(Arbitre.Piocher());
+        	chevaletliste.add(arbitre.Piocher());
         }
     }
 
@@ -23,7 +25,7 @@ public class Chevalet {
    public List<Jeton> changement() {
 	   chevaletJoueur = retourliste();
 	   int indexJetonEchange = 2; //Index du jeton à échanger sur le chevalet
-	   Arbitre.échanger(chevaletJoueur);
+	   arbitre.échanger(chevaletJoueur);
 	   
 	   return chevaletJoueur;
    }
