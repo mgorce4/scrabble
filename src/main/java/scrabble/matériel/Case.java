@@ -6,8 +6,8 @@ public enum Case {
 	DEBUT(1,2),
 	LETTREDOUBLE(2,1),
 	LETTRETRIPLE(3,1),
-	MOTDOUBLE(2,1),
-	MOTTRIPLE(3,1);
+	MOTDOUBLE(1,2),
+	MOTTRIPLE(1,3);
 	
 	private final int multiplierLettre;
 	private final int multiplierMot;
