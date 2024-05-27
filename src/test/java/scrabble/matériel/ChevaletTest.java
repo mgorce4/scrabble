@@ -1,35 +1,32 @@
 package scrabble.matériel;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class ChevaletTest {
+public class ChevaletTest {
 
-	@Test
-	public void testChangementChevalet() {
-	    Chevalet chevalet = new Chevalet();
-	    List<Jeton> jetonsInitiaux = chevalet.retourliste();
+	private Chevalet chevalet;
 
-	    // Changer le chevalet
-	    List<Jeton> jetonsChangés = chevalet.changement();
+    @BeforeEach
+    public void setUp() {
+        chevalet = new Chevalet();
 
-	    // Vérifier que le nombre de jetons sur le chevalet n'a pas changé
-	    assertEquals(jetonsInitiaux.size(), jetonsChangés.size());
+    }
 
-	    // Vérifier que certains jetons ont changé
-	    boolean jetonChangé = false;
-	    for (int i = 0; i < jetonsInitiaux.size(); i++) {
-	        if (!jetonsInitiaux.get(i).equals(jetonsChangés.get(i))) {
-	            jetonChangé = true;
-	            break;
-	        }
-	    }
-	    assertTrue(jetonChangé);
-	}
+    @Test
+    public void testRecupChevaletliste() {
+        List<Jeton> jetons = chevalet.recupChevaletliste();
+        assertEquals(7, jetons.size());
 
-
+        for (Jeton jeton : jetons) {
+            assertNotNull(jeton);
+            assertNotNull(jeton.lettre());
+            assertNotNull(jeton.point());
+        }
+    }
 }
