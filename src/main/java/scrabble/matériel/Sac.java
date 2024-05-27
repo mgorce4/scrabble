@@ -55,7 +55,7 @@ public class Sac {
 		return sacRempli;
 	}
 	
-	public List<Jeton> getSacRempli() {
+	public List<Jeton> recupSacRempli() {
 		return sacRempli;
 	}
 
@@ -65,10 +65,10 @@ public class Sac {
 
 	public void mélanger() {
 		//collections.shuffle -> mélange notre sac
-        Collections.shuffle(getSacRempli());
+        Collections.shuffle(recupSacRempli());
 	}
 	
-	public Jeton donner(List<Jeton> sac) {
+	public Jeton donnerSac(List<Jeton> sac) {
 	    if (!sac.isEmpty()) {
 	        Jeton result = sac.get(0);
 	        sac.remove(result);
@@ -80,7 +80,7 @@ public class Sac {
 	}
 	
 	public void recevoir(Jeton jeton) {
-		getSacRempli().add(jeton);
+		recupSacRempli().add(jeton);
 	}
 
 }
