@@ -79,7 +79,7 @@ public class Sac {
 	    }
 	}
 	
-	public void recevoir(Jeton jeton) {
+	public void sacRecevoir(Jeton jeton) {
 		recupSacRempli().add(jeton);
 	}
 
