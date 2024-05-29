@@ -27,7 +27,7 @@ public class ChevaletTest {
     }
 
     @Test
-    public void testChevaletDonneIndexOutOfBounds() {
+    public void testChevaletDonneIndexHorsLimite() {
         Chevalet chevalet = new Chevalet();
         Assertions.assertThrows(IndexOutOfBoundsException.class, () -> chevalet.chevaltDonne(10)); // Index out of bounds
     }
