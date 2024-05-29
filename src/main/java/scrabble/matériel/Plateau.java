@@ -1,4 +1,4 @@
-package scrabble.matériel;
+/* package scrabble.matériel;
 
 public class Plateau {
 	
@@ -43,6 +43,46 @@ public class Plateau {
 	}
 }
 
+*/ 
+
+
+
+
+
+package scrabble.matériel;
+
+
+
+public class Plateau {
+
+	Case[][] plateauJeu;
+
+	public Plateau() {
+
+		CreerPlateau();
+
+	}
+
+
+
+	public void CreerPlateau() {
+
+		plateauJeu = new Case[15][15];
+
+		for(int i = 0; i < 15; i ++) {
+
+			for(int j = 0; j < 15; j++) {
+
+				plateauJeu[i][j] = new Case();
+
+			}
+
+		}
+
+	}
+
+}
+		
 
 
 
