@@ -7,18 +7,16 @@ import scrabble.arbitreDuJeu.Arbitre;
 public class Chevalet {
 	
     private List<Jeton> chevaletliste;
-    private List<Jeton> chevaletJoueur;
     private String joueur;
     Arbitre arbitre= new Arbitre();
     
     public List<Jeton> recupChevaletliste() {
-		return chevaletliste;
+		return this.chevaletliste;
 	}
 
 	public void setChevaletliste(List<Jeton> chevaletliste) {
 		this.chevaletliste = chevaletliste;
 	}
-
 
 	public Chevalet() {
     	chevaletliste = new ArrayList<>();
@@ -26,19 +24,8 @@ public class Chevalet {
         	chevaletliste.add(arbitre.piocher());
         }
     }
-    
 
-   public List<Jeton> retourliste() {
-	   return this.chevaletliste;
-   }
-   
-   public List<Jeton> changement(Chevalet chevaletDuMain) {
-	   chevaletJoueur = retourliste();
-	   arbitre.échanger(chevaletDuMain);
-	   return chevaletJoueur;
-   }
-   
-   public Jeton donnerJeton(int numDuJeton) {
+   public Jeton chevaltDonne(int numDuJeton) {
 	    if (!chevaletliste.isEmpty()) {
 	        Jeton result = chevaletliste.get(numDuJeton);
 	        chevaletliste.remove(result);
@@ -47,6 +34,10 @@ public class Chevalet {
 	    	System.out.println("Le chevalet est vide");
 	        return null;
 	    }
+	}
+
+   public void chevaletRecup(Jeton jeton) {
+		recupChevaletliste().add(jeton);
 	}
    
 }

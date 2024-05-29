@@ -1,7 +1,5 @@
 package scrabble.arbitreDuJeu;
 
-import java.io.Console;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +9,7 @@ import scrabble.matériel.*;
 public class Arbitre {
 	private Sac sacPourArbitre = new Sac();
 	private Chevalet chevaletArbitre;
+	
 	public Sac RecupeSac() {
 		return sacPourArbitre;
 	}
@@ -28,23 +27,30 @@ public class Arbitre {
         return jetonRecup;
     }
 	
-	public Jeton échanger(Chevalet chevalet) {
+	public Chevalet echanger(Chevalet chevalet) {
+		Jeton nouveauxJeton= null;
 		chevaletArbitre=chevalet;
 		chevaletArbitre.recupChevaletliste();
 		
-		//On demande le jeton que le joueur veut echanger
-		System.out.println("choisissez le jeton à échanger");
-		Scanner scanner = new Scanner(System.in);
-		int jetonchoisi = scanner.nextInt();
-		//TODO une exception si on choisit un nombre <=0
+		try {
+			//On demande le jeton que le joueur veut echanger
+			System.out.println("choisissez le jeton à échanger");
+			Scanner scanner = new Scanner(System.in);
+			int jetonchoisi = scanner.nextInt();
+			
+			Jeton jetonEchange = chevaletArbitre.chevaltDonne(jetonchoisi);
+			sacPourArbitre.sacRecevoir(jetonEchange);
+			nouveauxJeton=piocher();
+			chevaletArbitre.chevaletRecup(nouveauxJeton);
+			sacPourArbitre.mélanger();
+			
+		} catch (Exception e) {
+			System.out.println("Erreur, Jeton inexistant.");
+			//return null;
+		}
 		
 		
-		Jeton jetonEchange = chevaletArbitre.donnerJeton(jetonchoisi);
-		sacPourArbitre.recevoir(jetonEchange);
-        sacPourArbitre.mélanger();
-        Jeton nouveauxJeton=piocher();
-		
-		return nouveauxJeton;
+		return chevaletArbitre;
         
     }
 
