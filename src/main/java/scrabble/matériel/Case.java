@@ -2,12 +2,24 @@ package scrabble.matériel;
 
 public enum Case {
 	
-	SIMPLE(1,1),
+	SIMPLE(" "),
+	DEBUT("*");
+	
+	public String code;
+	
+	private Case(String suit) {
+		this.code = suit;
+	}
+	public String code() {
+		return this.code;
+	}
+	/*SIMPLE(1,1),
 	DEBUT(1,2),
 	LETTREDOUBLE(2,1),
 	LETTRETRIPLE(3,1),
 	MOTDOUBLE(1,2),
 	MOTTRIPLE(1,3);
+	
 	
 	private final int multiplierLettre;
 	private final int multiplierMot;
@@ -25,5 +37,8 @@ public enum Case {
     public int multiplierMot() {
         return this.multiplierMot;
     }
+    */
+	 
+
 
 }

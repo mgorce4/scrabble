@@ -73,7 +73,7 @@ public class Plateau {
 
 			for(int j = 0; j < 15; j++) {
 
-				plateauJeu[i][j] = new Case();
+				plateauJeu[i][j] = Case.SIMPLE;
 
 			}
 
