@@ -3,8 +3,7 @@ package scrabble.application;
 import java.util.List;
 
 import scrabble.arbitreDuJeu.Arbitre;
-import scrabble.matériel.Chevalet;
-import scrabble.matériel.Jeton;
+import scrabble.materiel.*;
 
 public class ScrabbleApplicationConsole {
 	
@@ -17,6 +16,7 @@ public class ScrabbleApplicationConsole {
 	public static void main(String[] args) {
 		Chevalet chevaletMain = new Chevalet();
 		Arbitre arbitre=new Arbitre();
+		Plateau plateau= new Plateau();
 		
 		message(LIGNE_HORIZONTALE);
 		message("-- Bienvenue dans notre magnifique jeu de scrabble ! --");
@@ -39,9 +39,11 @@ public class ScrabbleApplicationConsole {
         message("Voici le chevalet rempli :");
         for (Jeton jeton : listejetons) {
             message(jeton.toString());    
-        }
+        } 
         
 		System.out.println(arbitre.piocher());
+		
+		//plateau.afficherPlateau();
         
 	}
 	
