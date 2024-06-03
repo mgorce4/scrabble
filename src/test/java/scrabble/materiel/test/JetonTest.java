@@ -1,7 +1,8 @@
-package scrabble.matériel;
+package scrabble.materiel.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import scrabble.materiel.*;
 import org.junit.jupiter.api.Test;
 
 public class JetonTest {

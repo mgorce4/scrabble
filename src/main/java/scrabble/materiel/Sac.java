@@ -1,4 +1,4 @@
-package scrabble.matériel;
+package scrabble.materiel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -80,7 +80,7 @@ public class Sac {
 	}
 	
 	public void sacRecevoir(Jeton jeton) {
-		recupSacRempli().add(jeton);
+		sacRempli.add(jeton);
 	}
 
 }

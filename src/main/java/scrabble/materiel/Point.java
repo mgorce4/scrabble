@@ -1,4 +1,4 @@
-package scrabble.matériel;
+package scrabble.materiel;
 
 public enum Point {
 	ZERO("0"),

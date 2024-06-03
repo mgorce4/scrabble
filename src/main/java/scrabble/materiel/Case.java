@@ -1,4 +1,4 @@
-package scrabble.matériel;
+package scrabble.materiel;
 
 public enum Case {
 	
@@ -13,6 +13,8 @@ public enum Case {
 	public String code() {
 		return this.code;
 	}
+	
+	
 	/*SIMPLE(1,1),
 	DEBUT(1,2),
 	LETTREDOUBLE(2,1),

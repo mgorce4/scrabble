@@ -4,7 +4,6 @@ public class Plateau {
     private static final Integer TAILLE = 15;
     private static final Integer CENTRE = 7;
 
-
     Case[][] plateauJeu;
 
     public Plateau() {
@@ -24,8 +23,6 @@ public class Plateau {
     public void afficherPlateau() {
     	// https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/ pour comprendre StringBuilder
     	StringBuilder affichage = new StringBuilder();
-    	//affichage.append(" ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ \n");
-    	//affichage.append("|    |    |     |    ||    ||    ||    ||    ||    ||    ||    ||    ||    ||    ||    |");
     	for (int i=0;i< TAILLE; i++) {
     		affichage.append(" ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ \n");
     		for (Case plateauJeu : this.plateauJeu[i]) {

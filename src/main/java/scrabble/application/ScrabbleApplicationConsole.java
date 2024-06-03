@@ -14,9 +14,10 @@ public class ScrabbleApplicationConsole {
 	}
 
 	public static void main(String[] args) {
-		Chevalet chevaletMain = new Chevalet();
 		Arbitre arbitre=new Arbitre();
 		Plateau plateau= new Plateau();
+
+		Chevalet chevaletMain = new Chevalet();
 		
 		message(LIGNE_HORIZONTALE);
 		message("-- Bienvenue dans notre magnifique jeu de scrabble ! --");
@@ -24,7 +25,7 @@ public class ScrabbleApplicationConsole {
 		message(LIGNE_HORIZONTALE);
 		
 		
-		chevaletMain.recupChevaletliste();
+		chevaletMain=arbitre.initierChevalet();
 		
 		List<Jeton> listejetons = chevaletMain.recupChevaletliste();
 
@@ -36,12 +37,8 @@ public class ScrabbleApplicationConsole {
         arbitre.echanger(chevaletMain);
         listejetons = chevaletMain.recupChevaletliste();
 
-        message("Voici le chevalet rempli :");
-        for (Jeton jeton : listejetons) {
-            message(jeton.toString());    
-        } 
+        chevaletMain.afficher();
         
-		System.out.println(arbitre.piocher());
 		
 		//plateau.afficherPlateau();
         

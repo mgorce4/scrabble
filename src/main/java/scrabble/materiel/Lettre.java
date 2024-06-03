@@ -1,4 +1,4 @@
-package scrabble.matériel;
+package scrabble.materiel;
 
 public enum Lettre {
 	JOKER(" "),

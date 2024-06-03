@@ -1,7 +1,8 @@
-package scrabble.matériel;
+package scrabble.materiel.test;
 
 import java.util.List;
 
+import scrabble.materiel.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
