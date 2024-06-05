@@ -34,21 +34,12 @@ public class Arbitre {
 		System.out.println("choisissez le jeton à échanger");
 		Scanner scanner = new Scanner(System.in);
 		int jetonchoisi = scanner.nextInt();
-		System.out.println("jeton choisi= "+jetonchoisi);
-		try {
-			System.out.println("passage dans le try");			
+		
+		try {		
 			Jeton jetonEchange = chevaletArbitre.chevaltDonne(jetonchoisi);
-			System.out.println("passage l1");		
-			System.out.println("affiche jeton"+ jetonEchange);	
 			sacPourArbitre.sacRecevoir(jetonEchange);
-			System.out.println("passage l2");	
-			
 			nouveauxJeton=piocher();
-			System.out.println("passage l3");	
 			chevaletArbitre.chevaletRecup(nouveauxJeton);
-			System.out.println("passage l4");	
-			chevaletArbitre.afficher();
-			System.out.println("passage l5");	
 			sacPourArbitre.mélanger();
 			
 		} catch (Exception e) {

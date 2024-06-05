@@ -27,18 +27,11 @@ public class ScrabbleApplicationConsole {
 		
 		arbitre.initierChevalet();
 		chevaletMain = joueur1.getjChevalet();
-		System.out.println(chevaletMain);
-		
-		/*List<Jeton> listejetons = chevaletMain.recupChevaletliste();
+		//System.out.println(chevaletMain);
 
 
         
         arbitre.echanger(chevaletMain);
-        listejetons = chevaletMain.recupChevaletliste();
-        
-        for (Jeton jeton : listejetons) {
-            message(jeton.toString());
-        }*/
 
 		
 		//plateau.afficherPlateau();
