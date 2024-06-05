@@ -1,7 +1,6 @@
 package scrabble.arbitreDuJeu;
 
 import java.util.ArrayList;
-
 import java.util.List;
 import java.util.Scanner;
 import scrabble.materiel.*;
@@ -9,36 +8,27 @@ import scrabble.materiel.*;
 
 public class Arbitre {
 	private Sac sacPourArbitre = new Sac();
-	private Chevalet chevaletArbitre;
-	
-	
-	public List<Jeton> recupListe() {
-		//permet de recuperer la list<Jeton> de l'attribut sacPourArbitre
-        return new ArrayList<>(sacPourArbitre.recupSacRempli());
-    }
+	private Joueur joueur1 = new Joueur("joueur1");
+	private Jeton jetons;
 	
 	public Jeton piocher() {
-        //sacPourArbitre.sac();
-        sacPourArbitre.mélanger();
-		List<Jeton> listeEstRecup=recupListe();
-		Jeton jetonRecup =sacPourArbitre.donnerSac(listeEstRecup);
+        this.sacPourArbitre.mélanger();
+		List<Jeton> listeEstRecup=sacPourArbitre.recupSacRempli();
+		Jeton jetonRecup=sacPourArbitre.donnerSac(listeEstRecup);
         return jetonRecup;
     }
 	
-	public Chevalet initierChevalet(){
-		List<Jeton> jetons=null;
+	public void initierChevalet(){
 		 for (int i = 0; i < 7; i++) {
-			 jetons.add(piocher());
+			 jetons=piocher();
+			 System.out.println(jetons);
+			 joueur1.getjChevalet().chevaletRecup(jetons);
 		 }
-		chevaletArbitre.remplirChevalet(jetons);
-		return chevaletArbitre;
 	}
 	
 	public Chevalet echanger(Chevalet chevalet) {
+		Chevalet chevaletArbitre=joueur1.getjChevalet();
 		Jeton nouveauxJeton= null;
-		chevaletArbitre=chevalet;
-		chevaletArbitre.recupChevaletliste();
-		chevaletArbitre.afficher();
 		
 		//On demande le jeton que le joueur veut echanger
 		System.out.println("choisissez le jeton à échanger");

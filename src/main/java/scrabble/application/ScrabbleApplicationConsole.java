@@ -16,29 +16,30 @@ public class ScrabbleApplicationConsole {
 	public static void main(String[] args) {
 		Arbitre arbitre=new Arbitre();
 		Plateau plateau= new Plateau();
+		Joueur joueur1=new Joueur("Joueur1");
 
-		Chevalet chevaletMain = new Chevalet();
+		Chevalet chevaletMain;
 		
 		message(LIGNE_HORIZONTALE);
 		message("-- Bienvenue dans notre magnifique jeu de scrabble ! --");
 		message("---------- Développé par nous ----------");
 		message(LIGNE_HORIZONTALE);
 		
+		arbitre.initierChevalet();
+		chevaletMain = joueur1.getjChevalet();
+		System.out.println(chevaletMain);
 		
-		chevaletMain=arbitre.initierChevalet();
-		
-		List<Jeton> listejetons = chevaletMain.recupChevaletliste();
+		/*List<Jeton> listejetons = chevaletMain.recupChevaletliste();
 
-        message("Voici le chevalet rempli :");
-        for (Jeton jeton : listejetons) {
-            message(jeton.toString());    
-        }
+
         
         arbitre.echanger(chevaletMain);
         listejetons = chevaletMain.recupChevaletliste();
-
-        chevaletMain.afficher();
         
+        for (Jeton jeton : listejetons) {
+            message(jeton.toString());
+        }*/
+
 		
 		//plateau.afficherPlateau();
         

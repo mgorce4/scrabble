@@ -2,24 +2,18 @@ package scrabble.materiel;
 
 import java.util.ArrayList;
 import java.util.List;
-import scrabble.arbitreDuJeu.Arbitre;
 
 public class Chevalet {
 	
     private List<Jeton> chevaletliste;
     
+    public Chevalet() {
+    	this.chevaletliste=new ArrayList<>();
+    }
+    
     public List<Jeton> recupChevaletliste() {
 		return this.chevaletliste;
 	}
-
-	public void setChevaletliste(List<Jeton> chevaletliste) {
-		this.chevaletliste = chevaletliste;
-	}
-
-	public void remplirChevalet(List<Jeton> jetons) {
-    	chevaletliste = new ArrayList<>();
-        	chevaletliste.addAll(jetons);
-    }
 
    public Jeton chevaltDonne(int numDuJeton) {
 	    if (!chevaletliste.isEmpty()) {
@@ -32,14 +26,14 @@ public class Chevalet {
 	    }
 	}
 
-   public void chevaletRecup(Jeton jeton) {
-		recupChevaletliste().add(jeton);
+   public List<Jeton> chevaletRecup(Jeton jeton) {
+		chevaletliste.add(jeton);
+		return chevaletliste;
 	}
    
    public void afficher() {
-	   System.out.println("Voici le chevalet rempli :");
        for (Jeton jeton : chevaletliste) {
-    	   System.out.println(jeton.toString());    
+    	   System.out.println(jeton.toString());  
        }
    }
    
