@@ -6,6 +6,7 @@ public class Plateau {
 
     
     Case[][] plateau;
+    Jeton[][] jetons;
 
     public Plateau() {
         creerPlateau();
@@ -13,6 +14,7 @@ public class Plateau {
 
     public void creerPlateau() {
     	plateau = new Case[TAILLE][TAILLE];
+    	jetons = new Jeton[TAILLE][TAILLE];
         for(int ligne = 0; ligne < TAILLE; ligne ++) {
             for(int colonne = 0; colonne < TAILLE; colonne++) {
             	plateau[ligne][colonne] = Case.SIMPLE;
@@ -70,7 +72,7 @@ public class Plateau {
         plateau[14][11] = Case.LETTREDOUBLE;
         plateau[11][7] = Case.LETTREDOUBLE;
         plateau[12][6] = Case.LETTREDOUBLE;
-        plateau[12][9] = Case.LETTREDOUBLE;
+        plateau[12][8] = Case.LETTREDOUBLE;
 
         plateau[1][5] =Case.LETTRETRIPLE;
         plateau[1][9] =Case.LETTRETRIPLE;
@@ -105,6 +107,12 @@ public class Plateau {
     	}
     	System.out.println(affichage.toString());
     }
+    
+  
+  
+
+    
+
 
 
 }
