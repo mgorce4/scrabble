@@ -5,16 +5,16 @@ public class Plateau {
     private static final Integer CENTRE = TAILLE/2;
 
     
-    Case[][] plateau;
-    Jeton[][] jetons;
+    private Case[][] plateau;
+    private Jeton[][] jetons;
 
     public Plateau() {
         creerPlateau();
     }
 
     public void creerPlateau() {
-    	plateau = new Case[TAILLE][TAILLE];
-    	jetons = new Jeton[TAILLE][TAILLE];
+    	this.plateau = new Case[TAILLE][TAILLE];
+    	this.jetons = new Jeton[TAILLE][TAILLE];
         for(int ligne = 0; ligne < TAILLE; ligne ++) {
             for(int colonne = 0; colonne < TAILLE; colonne++) {
             	plateau[ligne][colonne] = Case.SIMPLE;
@@ -86,9 +86,32 @@ public class Plateau {
         plateau[9][9] =Case.LETTRETRIPLE;
         plateau[13][5] = Case.LETTRETRIPLE;
         plateau[13][9] = Case.LETTRETRIPLE;
+        plateau[5][9] = Case.LETTRETRIPLE;
+
 
     }
     
+
+
+    public void placerJeton(Jeton jeton, int colonne, int ligne) {
+        jetons[ligne][colonne] = jeton;
+    }
+
+    public Jeton[][] jetons() {
+        return jetons;
+    }
+
+    public Case[][] plateau() {
+        return plateau;
+    }
+
+    public Case prendrePlateauA(Positions positions) {
+        return this.plateau[positions.ligne()][positions.colonne()];
+    }
+
+    public Jeton prendreJetonA(Positions positions) {
+        return this.jetons[positions.ligne()][positions.colonne()];
+    }
 
 
     
