@@ -33,7 +33,7 @@ public class Arbitre {
 		//On demande le jeton que le joueur veut echanger
 		System.out.println("choisissez le jeton à échanger");
 		Scanner scanner = new Scanner(System.in);
-		int jetonchoisi = scanner.nextInt();
+		int jetonchoisi = scanner.nextInt()-1;
 		
 		try {		
 			Jeton jetonEchange = chevaletArbitre.chevaltDonne(jetonchoisi);
