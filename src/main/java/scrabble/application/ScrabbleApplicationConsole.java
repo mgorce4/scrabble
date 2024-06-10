@@ -1,5 +1,6 @@
 package scrabble.application;
 
+import java.util.List;
 import java.util.Scanner;
 import scrabble.arbitreDuJeu.Arbitre;
 import scrabble.materiel.*;
@@ -66,17 +67,26 @@ public class ScrabbleApplicationConsole {
 	}
 	
 	public void choix1() {
-		
 		chevaletMain.afficher();
-		
 		arbitre.echanger(chevaletMain);
 	}
 		
 	public void choix2() {
 		plateau.afficherPlateau();
 		chevaletMain.afficher();
+		
+		message("Choisir le jeton à poser :");
+		int i=scannerNbr();
+		message("Choisir la colonne :");
+		int colonne=scannerNbr();
+		message("Choisir la ligne :");
+		int ligne=scannerNbr();
+		
+		Jeton jeton=chevaletMain.chevaltDonne(i);
+		
+		plateau.placerJeton(jeton, colonne, ligne);
+		plateau.afficherPlateau();
 	}
-	
 	
 	
 }
