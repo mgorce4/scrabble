@@ -1,15 +1,20 @@
 package scrabble.arbitreDuJeu;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import scrabble.materiel.*;
 
 
 public class Arbitre {
-	private Sac sacPourArbitre = new Sac();
-	private Joueur joueur1 = new Joueur("joueur1");
+	private Sac sacPourArbitre;
+	private Joueur joueur1;
 	private Jeton jetons;
+	
+	
+	public Arbitre(String nom) {
+		sacPourArbitre = new Sac();
+		joueur1 = new Joueur(nom);
+	}
 	
 	public Jeton piocher() {
         this.sacPourArbitre.mélanger();
@@ -21,10 +26,14 @@ public class Arbitre {
 	public void initierChevalet(){
 		 for (int i = 0; i < 7; i++) {
 			 jetons=piocher();
-			 System.out.println(jetons);
 			 joueur1.getjChevalet().chevaletRecup(jetons);
 		 }
 	}
+	
+	public Joueur joueur() {
+		return joueur1;
+	}
+	
 	
 	public Chevalet echanger(Chevalet chevalet) {
 		Chevalet chevaletArbitre=joueur1.getjChevalet();
